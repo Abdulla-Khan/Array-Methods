@@ -22,28 +22,27 @@ const people = [
 ];
 
 const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
-
-console.table('1:' + fifteen);
+console.table(fifteen);
 
 const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
 console.log(fullNames);
 
 
 const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-console.table('2:' + ordered);
+console.table(ordered);
 
 const totalYears = inventors.reduce((total, inventor) => {
     return total + (inventor.passed - inventor.year);
 }, 0);
 
-console.log("3:" + totalYears);
+console.log(+ totalYears);
 
 const oldest = inventors.sort(function (a, b) {
     const lastInventor = a.passed - a.year;
     const nextInventor = b.passed - b.year;
     return lastInventor > nextInventor ? -1 : 1;
 });
-console.table("4:" + oldest);
+console.table(oldest);
 
 
 
@@ -52,7 +51,7 @@ const alpha = people.sort((lastOne, nextOne) => {
     const [bLast, bFirst] = nextOne.split(', ');
     return aLast > bLast ? 1 : -1;
 });
-console.log("5:" + alpha);
+console.log(alpha);
 
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
@@ -64,4 +63,4 @@ const transportation = data.reduce(function (obj, item) {
     return obj;
 }, {});
 
-console.log("6:" + transportation);
+console.log(transportation);
